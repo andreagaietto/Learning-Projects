@@ -64,3 +64,9 @@ p {
   overflow: auto;
   padding: 0 20px;
 } 
+
+#showcase {
+  background: url('../image_resources/showcase.jpg') no-repeat
+  center center/cover;
+  height: 600px;
+}
