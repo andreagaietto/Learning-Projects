@@ -17,18 +17,18 @@ if player == computer:
     print("It's a tie, computer chose " + computer + "!")
 elif player == "rock":
 	if computer == "paper":
-		print("Player 2 wins, computer chose " + computer + "!")
+		print("Computer wins, computer chose " + computer + "!")
 	else:
-		print("Player 1 wins, computer chose " + computer + "!")
+		print("Player wins, computer chose " + computer + "!")
 elif player == "paper":
 	if computer == "rock":
-		print("Player 1 wins, computer chose " + computer + "!")
+		print("Player wins, computer chose " + computer + "!")
 	else:
-		print("Player 1 wins, computer chose " + computer + "!")
+		print("Computer wins, computer chose " + computer + "!")
 elif player == "scissors":
 	if computer == "rock":
-		print("Player 2 wins, computer chose " + computer + "!")
+		print("Computer wins, computer chose " + computer + "!")
 	else:
-		print("Player 1 wins, computer chose " + computer + "!")
+		print("Player wins, computer chose " + computer + "!")
 else:
 	print("Please enter a valid move.")
