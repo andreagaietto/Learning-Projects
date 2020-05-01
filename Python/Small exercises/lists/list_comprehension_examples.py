@@ -30,3 +30,7 @@ print(string_list)
 colors = ["red", "blue", "green", "yellow"]
 color_upper = [color.upper() for color in colors]
 print(color_upper)
+
+with_vowels = "This is so much fun!"
+joined = ''.join(char for char in with_vowels if char not in "aeiou")
+print(joined)
