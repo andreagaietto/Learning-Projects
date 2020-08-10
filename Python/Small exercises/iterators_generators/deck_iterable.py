@@ -27,6 +27,8 @@ class Deck:
     def count(self):
         return len(self.card_deck)
 
+    def __iter__(self):
+        return iter(self.card_deck)
 
     def __repr__(self):
         return repr('Deck of ' + self.count() + ' cards')
@@ -64,13 +66,6 @@ class Deck:
     def deal_hand(self, number_cards):
         dealt_hand = self._deal(number_cards)
         return dealt_hand
-
-
-
-
-
-deck1 = Deck()
-print(deck1)
-variable = deck1._deal(1)
-print(deck1)
-print(variable)
+cards = Deck()
+for card in cards:
+    print(card)
