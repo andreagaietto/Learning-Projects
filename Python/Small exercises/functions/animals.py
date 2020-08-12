@@ -1,4 +1,13 @@
 def speak(animal = "dog"):
+    """
+
+    >>> speak("dog")
+    'woof'
+    >>> speak("pig")
+    'oink'
+    """
+
+
     if animal == "pig":
         return "oink"
     elif animal == "duck" :

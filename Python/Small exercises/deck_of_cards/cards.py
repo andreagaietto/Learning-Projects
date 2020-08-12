@@ -29,14 +29,14 @@ class Deck:
 
 
     def __repr__(self):
-        return repr('Deck of ' + self.count() + ' cards')
+        return repr('Deck of ' + str(self.count()) + ' cards')
 
     def _deal(self, number):
         deck_length = self.count()
         removed_cards = []
         if deck_length == 0:
             raise ValueError("All cards have been dealt")
-        elif number < deck_length:
+        elif number <= deck_length:
             while number > 0:
                 removed = self.card_deck.pop()
                 removed_cards.append(removed)
@@ -45,7 +45,6 @@ class Deck:
         else:
             if number > deck_length:
                 for _ in range(deck_length):
-                    self.card_deck.pop()
                     removed = self.card_deck.pop()
                     removed_cards.append(removed)
                 return removed_cards
@@ -55,7 +54,7 @@ class Deck:
         if deck_length != 52:
             return ValueError("Only full decks can be shuffled")
         else:
-            random.shuffle(deck1)
+            random.shuffle(self.card_deck)
 
     def deal_card(self):
         dealt_card = self._deal(1)
@@ -69,8 +68,9 @@ class Deck:
 
 
 
-deck1 = Deck()
-print(deck1)
-variable = deck1._deal(1)
-print(deck1)
-print(variable)
+"""deck1 = Deck()
+print(deck1.count())
+deck1._deal(52)
+print(deck1.count())
+deck1._deal(1)
+"""
