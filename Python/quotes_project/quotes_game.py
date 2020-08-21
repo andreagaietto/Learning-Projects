@@ -9,18 +9,21 @@ object_list = []
 
 def main():
     to_continue = "y"
-    response = requests.get("http://quotes.toscrape.com/")
+    next_page = "y"#assign a value to initialize
+    response = requests.get("http://quotes.toscrape.com/") #set initial page to start at
     soup = BeautifulSoup(response.text, "html.parser")
-    quotes = soup.select(".quote")
-    for quote in quotes:
-        new_quote = Quote(quote)
-        object_list.append(new_quote)
-        new_quote.get_quote_text()
-        new_quote.get_quote_author()
-        new_quote.get_quote_url()
-    
-    
-    
+    while next_page != None: #if there is not a next page, value returned at bottom will be None
+        quotes = soup.select(".quote") #makes a list of all quote blocks on page
+        for quote in quotes: #cycles through quotes and creates object for each quote
+            new_quote = Quote(quote)
+            object_list.append(new_quote)
+            new_quote.get_quote_text()
+            new_quote.get_quote_author()
+            new_quote.get_quote_url()
+        next = soup.select_one(".next").find_next().get('href') #pulls url to next page (right now sees page 10 before terminating)
+        response = requests.get(f"http://quotes.toscrape.com/{next}") #updates next url to use to next page
+        soup = BeautifulSoup(response.text, "html.parser") #updates next url to use to next page
+        next_page = soup.select_one(".next")
     while to_continue != "n":
         quote = choice(object_list)
         print("Here's a quote:")
