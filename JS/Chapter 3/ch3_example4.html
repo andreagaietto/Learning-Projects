@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>Chapter 3, Example 4</title>
+    </head>
+    <body>
+        <script>
+            var degFarhen = [212, 32, -459.15];
+            var degCent = [];
+            var loopcounter;
+
+            for (loopCounter = 0; loopcounter <= 2; loopcounter++) {
+                degCent[loopcounter] = 5/9 * (degFarhen[loopcounter] - 32);
+            }
+
+            for (loopcounter = 2; loopcounter >= 0; loopcounter--) {
+                document.write("Value " + loopcounter + " was " + degFarhen[loopcounter] + " degrees Farenheit");
+
+                document.write(" which is " + degCent[loopcounter] + " degrees centigrade<br />");
+            }
+        </script>
+    </body>
+</html>
