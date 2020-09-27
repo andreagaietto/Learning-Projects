@@ -1,7 +1,7 @@
 var timeDay;
 var toDisplay;
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
 var date = new Date();
 var currentDate = date.getDate();
