@@ -1,11 +1,11 @@
 #writer creates writer object of writing to csv
 from csv import reader, writer
-"""with open("fightersMoves.csv", "w") as file:
+with open("fightersMoves.csv", "w") as file:
     csv_writer = writer(file)
     csv_writer.writerow(["Character", "Move"])
-    csv_writer.writerow(["Ryu", "Hadouken"])"""
+    csv_writer.writerow(["Ryu", "Hadouken"])
 
-with open("fighters.csv") as file:
+"""with open("fighters.csv") as file:
     csv_reader = reader(file)
     fighters = [[s.upper() for s in row] for row in csv_reader]
     for row in fighters:
@@ -23,4 +23,4 @@ with open("fighters.csv") as file:
     with open("screaming_fighters.csv", "w") as file:
         csv_writer = writer(file)
         for fighter in csv_reader:
-            csv_writer.writerow([s.upper() for s in fighter])
+            csv_writer.writerow([s.upper() for s in fighter])"""
